@@ -1,0 +1,9 @@
+.contenedorlogin {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+.btn-primary1{
+    width: 400px;
+}

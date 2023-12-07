@@ -1,0 +1,26 @@
+.pie {
+    display: flex;
+    padding: 10px 20 px;
+    border: 1px solid black;
+    justify-content: space-between;
+    color: rgb(50, 49, 47);
+    height: 40px;
+    align-items: center;
+    color: rgb(16, 15, 15)
+    
+}
+
+.icono {
+    width: 30px;
+    height: 30px;
+    color:gray ;
+}
+
+.iconos {
+    display: flex;
+    gap: 15px;
+}
+
+.desarrollo {
+    display: flex;
+}
