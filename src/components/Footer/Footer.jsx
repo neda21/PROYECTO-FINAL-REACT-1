@@ -5,7 +5,7 @@ const Footer = () => {
         <>
             <footer className="pie">
                 <div className="desarrollo">
-                    <h6>Desarrollado por Nestor Alarcon</h6>
+                    <h6>Desarrollado por Nestor Alarcon Hernadez</h6>
                 </div>
                 <div className="iconos">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-github icono" viewBox="0 0 16 16">
