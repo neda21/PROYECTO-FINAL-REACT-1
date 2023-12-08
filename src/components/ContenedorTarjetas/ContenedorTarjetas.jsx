@@ -1,9 +1,10 @@
 import './contenedortarjeta.css'
-import Tarjetas from '../../assets/Tarjetas'
+import Tarjetas from '../Tarjetas/Tarjetas'
 import { useEffect, useState } from 'react'
 import axios from 'axios';
 
-const ContenedorTarjetas = () => {
+const ContenedorTarjetas = ({ filtro}) => {
+    const login = localStorage.getItem("login")
     const [datos, setDatos] = useState([]);
     const ts = 2
     const key = "3e105e6aa93a91bd85cde560bdd4e7e8";
@@ -26,32 +27,41 @@ const ContenedorTarjetas = () => {
             }
         };
         solicitud();
-    }, [])
+    }, [url])
 
 
 
 
     return (
         <>
-            <main className='contenedor'>
-                {/* <Tarjetas
-                    ruta="https://cdn.marvel.com/content/1x/lokis2_lob_crd_04.jpg"
-                    titulo="Card title"
-                    descripcion="Soy una descripcion" />       
-                     */ }
-
-
-                {datos.map((item) => (
-                    <Tarjetas
-                        key={item.id}
-                        ruta={`${item.thumbnail.path}/portrait_uncanny.${item.thumbnail.extension}`}
-                        titulo={item.title}
-                    />
-                ))}
-            </main>
-        </>
-    )
-}
+        {}
+        <main className="contenedor">
+        {datos.length === 0 ? (
+          <div className="text-center loading">
+            <div
+              className="spinner-border text-secondary"
+              style={{ width: "3rem", height: "3rem" }}
+              role="status"
+            >
+              <span className="visually-hidden">Cargando...</span>
+            </div>
+          </div>
+        ) : (
+          datos.map((item) => (
+            <Tarjetas
+              key={item.id}
+              ruta={`${item.thumbnail.path}/portrait_uncanny.${item.thumbnail.extension}`}
+              titulo={item.title}
+              descripcion={item.description}
+              filtro={filtro}
+              id={item.id}
+            />
+          ))
+        )}
+      </main>
+    </>
+  );
+};
 
 export default ContenedorTarjetas
 

@@ -5,5 +5,11 @@
     align-items: center;
 }
 .btn-primary1{
-    width: 400px;
+    width: 100px;
 }
+.bienvenida {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
